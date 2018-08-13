@@ -375,6 +375,7 @@ void FmDecoder::process(const IQSampleVector& samples_in,
     if (m_stereo_enabled)
     {
         // Lock on stereo pilot.
+        m_pilotpll.process(m_buf_baseband, m_buf_rawstereo);
         m_stereo_detected = true;
 
         // Demodulate stereo signal.
